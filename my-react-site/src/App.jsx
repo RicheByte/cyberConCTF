@@ -1,8 +1,8 @@
 import './index.css'
-import CryptX from './Home'
+import CyberCon from './Home'
 
 function App() {
-  return <CryptX />
+  return <CyberCon />
 }
 
 export default App

@@ -104,7 +104,7 @@ const FAQAccordion = ({ question, answer }) => {
   );
 };
 
-export default function CryptX() {
+export default function CyberCon() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -131,7 +131,7 @@ export default function CryptX() {
         <nav className="relative z-50 w-full max-w-[1520px] mx-auto px-8 flex justify-between items-center mb-12">
           <div className="flex items-center space-x-2 text-xl font-bold tracking-widest uppercase">
             <Hexagon size={24} className="text-white fill-white" />
-            <span>CRYPTX</span>
+            <span>CYBERCON'26</span>
           </div>
           <div className="flex items-center space-x-6">
             <button className="bg-white text-black px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
@@ -156,10 +156,10 @@ export default function CryptX() {
             
             <FadeIn delay={400}>
               <h1 className="text-[6.5rem] sm:text-[9.5rem] md:text-[12.5rem] xl:text-[15rem] font-black tracking-tighter leading-[0.75] uppercase relative z-0">
-                <div className="text-white drop-shadow-2xl">CRYPT</div>
+                <div className="text-white drop-shadow-2xl">CYBER</div>
                 <div className="text-white drop-shadow-2xl ml-[5%] md:ml-[15%] relative">
-                  X 2.0
-                  <span className="absolute -top-12 left-24 text-[9.5rem] md:text-[19rem] text-white/5 font-black -z-10 pointer-events-none">X</span>
+                  CON'26
+                  <span className="absolute -top-12 left-24 text-[9.5rem] md:text-[19rem] text-white/5 font-black -z-10 pointer-events-none">C</span>
                 </div>
                 <div className="text-[#ff1e1e] drop-shadow-2xl relative z-0">ARE</div>
                 <div className="text-[#ff1e1e] drop-shadow-2xl relative z-0">NA</div>
@@ -237,7 +237,7 @@ export default function CryptX() {
               <FadeIn delay={200}>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-neutral-900">
                   <span className="text-[#ff1e1e] inline-block mr-4 md:mr-6 text-3xl align-middle shadow-[0_0_15px_rgba(255,30,30,0.5)] rounded-full w-4 h-4" />
-                  CryptX 2.0 - is an elite arena of cyber 
+                  CyberCon'26 - is an elite arena of cyber 
                   <span className="inline-block w-16 h-8 sm:w-20 sm:h-10 md:w-24 md:h-12 bg-neutral-200 rounded-full mx-2 md:mx-3 align-middle overflow-hidden relative shadow-inner">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=200&auto=format&fit=crop')] bg-cover bg-center opacity-80 mix-blend-multiply grayscale" />
                   </span>
@@ -279,7 +279,7 @@ export default function CryptX() {
             <div className="flex justify-between items-end mb-20">
               <h2 className="text-4xl md:text-6xl font-medium tracking-tight max-w-xl leading-tight">
                 <span className="text-[#ff1e1e] inline-block mr-6 text-2xl align-middle shadow-[0_0_15px_rgba(255,30,30,0.5)] rounded-full w-3 h-3" />
-                Stats defining the CryptX Arena
+                Stats defining the CyberCon'26 Arena
               </h2>
               <span className="text-xs text-gray-500 uppercase tracking-widest hidden md:block">Impact Metrics</span>
             </div>
@@ -463,7 +463,7 @@ export default function CryptX() {
           <FadeIn className="flex-1">
             <div className="flex items-center space-x-2 text-2xl font-bold tracking-widest uppercase mb-4">
               <Hexagon size={28} className="text-[#ff1e1e] fill-[#ff1e1e]" />
-              <span>CRYPTX 2.0</span>
+              <span>CYBERCON'26</span>
             </div>
             <p className="text-sm text-gray-400 max-w-sm leading-relaxed">
               Sri Lanka's only event where Builders, Designers, and Hackers compete on the same stage.
