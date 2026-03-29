@@ -117,25 +117,25 @@ export default function CyberCon() {
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-[#ff1e1e] selection:text-white overflow-x-hidden">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="relative w-full min-h-[95vh] flex flex-col items-center pt-6 pb-28">
+      <section className="relative w-full min-h-[95vh] flex flex-col items-center pt-4 sm:pt-6 pb-16 sm:pb-28">
         {/* Abstract Backgrounds */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[750px] bg-[#ff1e1e]/20 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[475px] h-[750px] bg-black/80 blur-[100px] rounded-full pointer-events-none z-10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[750px] h-[400px] sm:h-[750px] bg-[#ff1e1e]/20 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[250px] sm:w-[475px] h-[400px] sm:h-[750px] bg-black/80 blur-[100px] rounded-full pointer-events-none z-10" />
         
         {/* Red Triangle Accent behind Operative */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[285px] border-r-[285px] border-t-[475px] border-l-transparent border-r-transparent border-t-[#ff1e1e]/30 opacity-50 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[150px] sm:border-l-[285px] border-r-[150px] sm:border-r-[285px] border-t-[250px] sm:border-t-[475px] border-l-transparent border-r-transparent border-t-[#ff1e1e]/30 opacity-50 blur-3xl pointer-events-none" />
 
         <FallingDataSparks />
 
         {/* Navbar */}
-        <nav className="relative z-50 w-full max-w-[1520px] mx-auto px-8 flex justify-between items-center mb-12">
-          <div className="flex items-center space-x-2 text-xl font-bold tracking-widest uppercase">
-            <Hexagon size={24} className="text-white fill-white" />
+        <nav className="relative z-50 w-full max-w-[1520px] mx-auto px-4 sm:px-8 flex justify-between items-center mb-6 sm:mb-12">
+          <div className="flex items-center space-x-2 text-base sm:text-xl font-bold tracking-widest uppercase">
+            <Hexagon size={20} className="text-white fill-white sm:w-6 sm:h-6" />
             <span>CYBERCON'26</span>
           </div>
-          <div className="flex items-center space-x-6">
-            <button className="bg-white text-black px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-              Registration Portal
+          <div className="flex items-center space-x-3 sm:space-x-6">
+            <button className="bg-white text-black px-3 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+              Register
             </button>
             <button className="text-white text-xs font-bold uppercase tracking-wider hover:text-[#ff1e1e] transition-colors">
               Menu +
@@ -144,7 +144,7 @@ export default function CyberCon() {
         </nav>
 
         {/* Hero Content */}
-        <div className="relative z-20 w-full max-w-[1520px] mx-auto px-8 flex flex-col lg:flex-row justify-between items-start mt-8">
+        <div className="relative z-20 w-full max-w-[1520px] mx-auto px-4 sm:px-8 flex flex-col lg:flex-row justify-between items-start mt-4 sm:mt-8">
           
           {/* Left Column: Massive Typography */}
           <div className="relative flex-1 z-20 w-full">
@@ -155,11 +155,11 @@ export default function CyberCon() {
             </FadeIn>
             
             <FadeIn delay={400}>
-              <h1 className="text-[6.5rem] sm:text-[9.5rem] md:text-[12.5rem] xl:text-[15rem] font-black tracking-tighter leading-[0.75] uppercase relative z-0">
+              <h1 className="text-[3.5rem] sm:text-[6.5rem] md:text-[9.5rem] lg:text-[12.5rem] xl:text-[15rem] font-black tracking-tighter leading-[0.75] uppercase relative z-0">
                 <div className="text-white drop-shadow-2xl">CYBER</div>
                 <div className="text-white drop-shadow-2xl ml-[5%] md:ml-[15%] relative">
                   CON'26
-                  <span className="absolute -top-12 left-24 text-[9.5rem] md:text-[19rem] text-white/5 font-black -z-10 pointer-events-none">C</span>
+                  <span className="absolute -top-6 sm:-top-12 left-12 sm:left-24 text-[5rem] sm:text-[9.5rem] md:text-[19rem] text-white/5 font-black -z-10 pointer-events-none">C</span>
                 </div>
                 <div className="text-[#ff1e1e] drop-shadow-2xl relative z-0">ARE</div>
                 <div className="text-[#ff1e1e] drop-shadow-2xl relative z-0">NA</div>
@@ -167,9 +167,9 @@ export default function CyberCon() {
             </FadeIn>
 
             <FadeIn delay={600}>
-              <div className="mt-10 flex items-center space-x-4">
+              <div className="mt-6 sm:mt-10 flex items-center space-x-4">
                 <div className="w-2 h-2 rounded-full bg-[#ff1e1e] shadow-[0_0_10px_#ff1e1e]" />
-                <span className="text-sm text-gray-400 font-medium tracking-widest uppercase">Hosted By ICTS - USJ</span>
+                <span className="text-xs sm:text-sm text-gray-400 font-medium tracking-widest uppercase">Hosted By ICTS - USJ</span>
               </div>
             </FadeIn>
           </div>
@@ -180,12 +180,12 @@ export default function CyberCon() {
           </FadeIn>
 
           {/* Right Column: Info */}
-          <div className="relative flex-1 flex flex-col items-start lg:items-end pt-20 lg:pt-10 z-20 h-full justify-between pb-28 mt-10 lg:mt-0">
+          <div className="relative flex-1 flex flex-col items-start lg:items-end pt-8 sm:pt-20 lg:pt-10 z-20 h-full justify-between pb-12 sm:pb-28 mt-6 sm:mt-10 lg:mt-0">
             <FadeIn delay={400} className="text-4xl md:text-5xl lg:text-7xl font-light text-white/90 tracking-widest lg:rotate-6 lg:origin-right opacity-80 mix-blend-screen hidden md:block">
               ハッカー
             </FadeIn>
 
-            <div className="flex flex-col items-start lg:items-end mt-10 md:mt-40 w-full max-w-sm">
+            <div className="flex flex-col items-start lg:items-end mt-6 sm:mt-10 md:mt-40 w-full max-w-sm">
                {/* Vertical accent */}
                <FadeIn delay={1000} className="hidden lg:flex w-8 h-20 mb-10 self-start flex-col justify-between ml-12">
                  <div className="w-full h-[6px] bg-white" />
@@ -220,7 +220,7 @@ export default function CyberCon() {
       </section>
 
       {/* ================= WHITE SECTION (ABOUT/TRACKS) ================= */}
-      <section className="relative z-30 w-full bg-[#f8f9fa] rounded-t-[3rem] md:rounded-t-[5rem] -mt-16 text-black px-8 py-24 md:py-32 overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+      <section className="relative z-30 w-full bg-[#f8f9fa] rounded-t-[2rem] sm:rounded-t-[3rem] md:rounded-t-[5rem] -mt-16 text-black px-4 sm:px-8 py-12 sm:py-24 md:py-32 overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
         <div className="max-w-[1400px] mx-auto">
           
           <FadeIn>
@@ -229,7 +229,7 @@ export default function CyberCon() {
             </div>
           </FadeIn>
 
-          <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 md:gap-20">
             {/* Left side: Massive text */}
             <div className="flex-1 relative">
               <div className="absolute -left-[20%] top-20 w-[600px] h-[600px] bg-gradient-to-tr from-gray-200 to-gray-50 rounded-full blur-2xl -z-10" />
@@ -267,7 +267,7 @@ export default function CyberCon() {
       </section>
 
       {/* ================= DARK STATS SECTION (IMPACT METRICS) ================= */}
-      <section className="relative w-full bg-[#030303] text-white pt-32 pb-24 px-8 border-t border-white/5">
+      <section className="relative w-full bg-[#030303] text-white pt-16 sm:pt-32 pb-12 sm:pb-24 px-4 sm:px-8 border-t border-white/5">
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
            style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '60px 60px' }}
         />
@@ -276,9 +276,9 @@ export default function CyberCon() {
           
           {/* Header Row */}
           <FadeIn>
-            <div className="flex justify-between items-end mb-20">
-              <h2 className="text-4xl md:text-6xl font-medium tracking-tight max-w-xl leading-tight">
-                <span className="text-[#ff1e1e] inline-block mr-6 text-2xl align-middle shadow-[0_0_15px_rgba(255,30,30,0.5)] rounded-full w-3 h-3" />
+            <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-end mb-10 sm:mb-20">
+              <h2 className="text-2xl sm:text-4xl md:text-6xl font-medium tracking-tight max-w-xl leading-tight">
+                <span className="text-[#ff1e1e] inline-block mr-3 sm:mr-6 text-2xl align-middle shadow-[0_0_15px_rgba(255,30,30,0.5)] rounded-full w-3 h-3" />
                 Stats defining the CyberCon'26 Arena
               </h2>
               <span className="text-xs text-gray-500 uppercase tracking-widest hidden md:block">Impact Metrics</span>
@@ -286,10 +286,10 @@ export default function CyberCon() {
           </FadeIn>
 
           {/* Grid of 3 Stat Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             
             {/* Card 1: Registrations (Chart) */}
-            <FadeIn delay={200} className="bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 h-[380px] flex flex-col justify-between group hover:border-white/20 transition-colors relative overflow-hidden">
+            <FadeIn delay={200} className="bg-[#0a0a0a] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 h-auto min-h-[280px] sm:min-h-[320px] lg:h-[380px] flex flex-col justify-between group hover:border-white/20 transition-colors relative overflow-hidden">
               <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-[#ff1e1e]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="w-full h-40 relative mt-4">
@@ -308,25 +308,25 @@ export default function CyberCon() {
 
               <div className="relative z-10">
                 <h4 className="text-gray-400 text-sm mb-2 uppercase tracking-wider font-bold">Total Registrations</h4>
-                <div className="text-6xl font-light tracking-tighter text-white">1000+</div>
+                <div className="text-4xl sm:text-6xl font-light tracking-tighter text-white">1000+</div>
               </div>
             </FadeIn>
 
             {/* Card 2: Difficulty Tiers */}
-            <FadeIn delay={400} className="bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 h-[380px] flex flex-col justify-between group hover:border-white/20 transition-colors relative">
-              <div className="w-full h-48 relative flex flex-col items-center justify-center mt-4 perspective-[1000px]">
-                <div className="w-48 h-16 bg-[#111] border border-white/10 rounded-2xl absolute top-8 transform scale-90 -translate-y-8 opacity-50 flex items-center px-4 shadow-xl">
+            <FadeIn delay={400} className="bg-[#0a0a0a] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 h-auto min-h-[280px] sm:min-h-[320px] lg:h-[380px] flex flex-col justify-between group hover:border-white/20 transition-colors relative">
+              <div className="w-full h-40 sm:h-48 relative flex flex-col items-center justify-center mt-4 perspective-[1000px]">
+                <div className="w-36 sm:w-48 h-12 sm:h-16 bg-[#111] border border-white/10 rounded-2xl absolute top-8 transform scale-90 -translate-y-8 opacity-50 flex items-center px-3 sm:px-4 shadow-xl">
                   <div className="w-2 h-2 rounded-full bg-green-500 mr-3 shadow-[0_0_10px_#22c55e]" />
-                  <span className="text-xs text-white">Entry / Easy</span>
+                  <span className="text-[10px] sm:text-xs text-white">Entry / Easy</span>
                 </div>
-                <div className="w-56 h-16 bg-[#161616] border border-white/10 rounded-2xl absolute top-12 transform scale-95 -translate-y-4 opacity-80 flex items-center px-4 shadow-2xl">
+                <div className="w-44 sm:w-56 h-12 sm:h-16 bg-[#161616] border border-white/10 rounded-2xl absolute top-12 transform scale-95 -translate-y-4 opacity-80 flex items-center px-3 sm:px-4 shadow-2xl">
                   <div className="w-2 h-2 rounded-full bg-yellow-500 mr-3 shadow-[0_0_10px_#eab308]" />
-                  <span className="text-xs text-white">Intermediate</span>
+                  <span className="text-[10px] sm:text-xs text-white">Intermediate</span>
                 </div>
-                <div className="w-64 h-20 bg-[#1c1c1c] border border-white/20 rounded-2xl absolute top-16 z-10 flex flex-col justify-center px-6 shadow-2xl group-hover:translate-y-[-5px] transition-transform">
+                <div className="w-52 sm:w-64 h-16 sm:h-20 bg-[#1c1c1c] border border-white/20 rounded-2xl absolute top-16 z-10 flex flex-col justify-center px-4 sm:px-6 shadow-2xl group-hover:translate-y-[-5px] transition-transform">
                   <div className="flex items-center">
                     <div className="w-3 h-3 rounded-full bg-[#ff1e1e] mr-3 shadow-[0_0_15px_#ff1e1e]" />
-                    <span className="text-sm font-bold text-white uppercase tracking-wider">Insane</span>
+                    <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Insane</span>
                   </div>
                   <span className="text-[10px] text-gray-500 ml-6 mt-1">Root Access Level</span>
                 </div>
@@ -334,22 +334,22 @@ export default function CyberCon() {
 
               <div className="relative z-10">
                 <h4 className="text-gray-400 text-sm mb-2 uppercase tracking-wider font-bold">Challenge Tiers</h4>
-                <div className="text-5xl font-light tracking-tighter text-white">3 Levels</div>
+                <div className="text-3xl sm:text-5xl font-light tracking-tighter text-white">3 Levels</div>
               </div>
             </FadeIn>
 
             {/* Card 3: Community Stats */}
-            <div className="flex flex-col gap-6 h-[380px]">
+            <div className="flex flex-col gap-4 sm:gap-6 h-auto sm:h-[380px]">
               
-              <FadeIn delay={600} className="bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 flex-1 flex flex-col justify-center items-center text-center group hover:border-white/20 transition-colors relative overflow-hidden">
+              <FadeIn delay={600} className="bg-[#0a0a0a] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex-1 flex flex-col justify-center items-center text-center group hover:border-white/20 transition-colors relative overflow-hidden min-h-[140px]">
                 <h4 className="text-gray-400 text-xs mb-1 uppercase tracking-wider font-bold">Universities Linked</h4>
-                <div className="text-5xl font-light tracking-tighter text-white mb-2">25+</div>
+                <div className="text-3xl sm:text-5xl font-light tracking-tighter text-white mb-2">25+</div>
                 <div className="text-[10px] text-[#ff1e1e] tracking-widest uppercase animate-pulse">Island-wide Grid</div>
               </FadeIn>
 
-              <FadeIn delay={800} className="bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 flex-1 flex flex-col justify-center items-center text-center group hover:border-white/20 transition-colors relative overflow-hidden">
+              <FadeIn delay={800} className="bg-[#0a0a0a] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex-1 flex flex-col justify-center items-center text-center group hover:border-white/20 transition-colors relative overflow-hidden min-h-[140px]">
                 <h4 className="text-gray-400 text-xs mb-1 uppercase tracking-wider font-bold">Track Winners</h4>
-                <div className="text-5xl font-light tracking-tighter text-white mb-2">09</div>
+                <div className="text-3xl sm:text-5xl font-light tracking-tighter text-white mb-2">09</div>
                 <div className="flex -space-x-2">
                   <div className="w-6 h-6 rounded-full bg-neutral-800 border-2 border-[#0a0a0a] flex items-center justify-center"><Trophy size={10} className="text-yellow-500" /></div>
                   <div className="w-6 h-6 rounded-full bg-neutral-800 border-2 border-[#0a0a0a] flex items-center justify-center"><Trophy size={10} className="text-gray-400" /></div>
@@ -364,8 +364,8 @@ export default function CyberCon() {
       </section>
 
       {/* ================= OPERATIONAL TIMELINE SECTION ================= */}
-      <section className="relative w-full bg-[#030303] text-white pt-16 pb-0 px-8 border-t border-white/5 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-end gap-12 md:gap-20">
+      <section className="relative w-full bg-[#030303] text-white pt-10 sm:pt-16 pb-0 px-4 sm:px-8 border-t border-white/5 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-end gap-8 sm:gap-12 md:gap-20">
           
           {/* Left side: Hand Image */}
           <FadeIn delay={200} className="flex-1 relative flex justify-center items-end self-end pt-8 md:pt-0 -mb-2 md:-mb-6 lg:-mb-10">
@@ -378,8 +378,8 @@ export default function CyberCon() {
           <div className="flex-1 w-full py-12 lg:py-24">
             <FadeIn delay={400}>
               <div className="mb-12">
-                <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">Operational Timeline</h2>
-                <p className="text-gray-400 text-lg">Dates are locked. Prepare your vectors.</p>
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4">Operational Timeline</h2>
+                <p className="text-gray-400 text-sm sm:text-lg">Dates are locked. Prepare your vectors.</p>
               </div>
             </FadeIn>
             
@@ -404,12 +404,12 @@ export default function CyberCon() {
       </section>
 
       {/* ================= COMMAND & INTEL (FAQ) SECTION ================= */}
-      <section className="relative w-full bg-[#030303] text-white pt-16 pb-32 px-8 border-t border-white/5">
+      <section className="relative w-full bg-[#030303] text-white pt-10 sm:pt-16 pb-16 sm:pb-32 px-4 sm:px-8 border-t border-white/5">
         <div className="max-w-[800px] mx-auto">
           
           <FadeIn>
             <div className="mb-16 md:text-center">
-              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">Command & Intel</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight mb-4">Command & Intel</h2>
               <p className="text-gray-500">Key personnel and classified queries.</p>
             </div>
           </FadeIn>
@@ -450,14 +450,14 @@ export default function CyberCon() {
       </section>
 
       {/* ================= FOOTER ================= */}
-      <footer className="w-full relative bg-[#050505] pt-20 pb-12 px-8 border-t border-white/10 overflow-hidden">
+      <footer className="w-full relative bg-[#050505] pt-12 sm:pt-20 pb-8 sm:pb-12 px-4 sm:px-8 border-t border-white/10 overflow-hidden">
         
         {/* Massive Solid Face Graphic (Upper Layer) */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[120%] pointer-events-none z-20 flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] sm:max-w-[800px] h-[120%] pointer-events-none z-20 flex items-center justify-center opacity-30 sm:opacity-100">
           <img src={faceImg} alt="Cyber Face" className="w-full h-full object-contain object-center drop-shadow-[0_0_30px_rgba(255,255,255,0.05)]" />
         </div>
 
-        <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
+        <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row justify-between items-start sm:items-center gap-8 sm:gap-12 mb-10 sm:mb-16">
           
           {/* Left Side: Brand */}
           <FadeIn className="flex-1">
@@ -471,7 +471,7 @@ export default function CyberCon() {
           </FadeIn>
 
           {/* Right Side: Links */}
-          <div className="flex-1 flex justify-end gap-16">
+          <div className="flex-1 flex flex-row justify-start sm:justify-end gap-10 sm:gap-16 w-full sm:w-auto">
             <FadeIn delay={200} className="flex flex-col space-y-4">
               <span className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Event</span>
               <a href="#" className="text-sm text-white hover:text-[#ff1e1e] transition-colors bg-black/50 px-2 -mx-2 rounded">About Tracks</a>
@@ -489,7 +489,7 @@ export default function CyberCon() {
         </div>
 
         <FadeIn delay={600}>
-          <div className="max-w-[1400px] mx-auto relative z-10 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-medium bg-[#050505]/80 p-4 rounded-xl">
+          <div className="max-w-[1400px] mx-auto relative z-10 border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-medium bg-[#050505]/80 p-3 sm:p-4 rounded-xl gap-3">
             <p className="text-white/70">© 2026 ICTS, Faculty of Technology, USJ. All rights reserved.</p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
