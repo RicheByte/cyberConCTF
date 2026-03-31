@@ -115,7 +115,7 @@ export default function CyberCon() {
 
             <div className="mt-12 flex items-center space-x-4">
               <div className="w-2 h-2 rounded-full bg-[#ff1e1e] shadow-[0_0_10px_#ff1e1e]" />
-              <span className="text-sm text-gray-400 font-medium tracking-widest uppercase">Hosted By ICTS - USJ</span>
+              <span className="text-sm text-gray-400 font-medium tracking-widest uppercase">Hosted By ICT Club Of Saegis Campus</span>
             </div>
           </div>
 

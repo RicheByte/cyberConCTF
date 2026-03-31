@@ -41,8 +41,19 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 
 // --- STYLES & ANIMATIONS ---
 const FallingDataSparks = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  const particleCount = isMobile ? 5 : 15;
+  
   const sparks = React.useMemo(() => 
-    [...Array(15)].map(() => ({
+    [...Array(particleCount)].map(() => ({
       width: Math.random() * 6 + 4,
       height: Math.random() * 8 + 6,
       left: Math.random() * 100,
@@ -50,7 +61,7 @@ const FallingDataSparks = () => {
       delay: Math.random() * 5,
       rotation: Math.random() * 360,
     })), 
-  []);
+  [particleCount]);
 
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -135,7 +146,7 @@ export default function CyberCon() {
           </div>
           <div className="flex items-center space-x-3 sm:space-x-6">
             <button className="bg-white text-black px-3 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-              Register
+              Deploy Credentials
             </button>
             <button className="text-white text-xs font-bold uppercase tracking-wider hover:text-[#ff1e1e] transition-colors">
               Menu +
@@ -150,7 +161,7 @@ export default function CyberCon() {
           <div className="relative flex-1 z-20 w-full">
             <FadeIn delay={200}>
               <div className="absolute -top-6 left-1 font-mono text-xs text-[#ff1e1e] tracking-widest uppercase animate-pulse">
-                サイバー戦争<br/>CYBER WARFARE
+                侵入演習<br/>BREACH OPERATION
               </div>
             </FadeIn>
             
@@ -169,7 +180,7 @@ export default function CyberCon() {
             <FadeIn delay={600}>
               <div className="mt-6 sm:mt-10 flex items-center space-x-4">
                 <div className="w-2 h-2 rounded-full bg-[#ff1e1e] shadow-[0_0_10px_#ff1e1e]" />
-                <span className="text-xs sm:text-sm text-gray-400 font-medium tracking-widest uppercase">Hosted By ICTS - USJ</span>
+                <span className="text-xs sm:text-sm text-gray-400 font-medium tracking-widest uppercase">Classified Ops | Hosted By ICT Club Of Saegis Campus</span>
               </div>
             </FadeIn>
           </div>
@@ -196,7 +207,7 @@ export default function CyberCon() {
 
                <FadeIn delay={1200}>
                  <p className="text-sm text-gray-400 leading-relaxed text-left w-full lg:pl-12 max-w-[250px] mb-10 lg:mb-16">
-                   One stage. Three tracks. Sri Lanka's only inter-university Hackathon, Designathon, and CTF.
+                   One battlefield. Three vectors of attack. Sri Lanka's premier infiltration, infrastructure breach, and payload delivery competition.
                  </p>
                </FadeIn>
 
@@ -207,9 +218,9 @@ export default function CyberCon() {
                    <div className="w-9 h-9 mb-5 bg-[#ff1e1e]/10 border border-[#ff1e1e]/30 rounded-xl flex items-center justify-center text-[#ff1e1e]">
                      <Activity size={18} className="animate-pulse" />
                    </div>
-                   <h3 className="text-xl font-medium text-white mb-3">Live Execution</h3>
+                   <h3 className="text-xl font-medium text-white mb-3">Hostile Engagement</h3>
                    <p className="text-xs text-gray-400 leading-relaxed">
-                     Registration closes in 26 days. Prepare your squad, align your vectors, and deploy into the nexus.
+                     Enrollment window closes in 26 days. Assemble your cell. Lock your protocols. Initiate breach sequence.
                    </p>
                  </div>
                </FadeIn>
@@ -225,7 +236,7 @@ export default function CyberCon() {
           
           <FadeIn>
             <div className="text-center mb-16">
-              <span className="text-xs font-bold tracking-widest uppercase text-gray-500">Operation Briefing</span>
+              <span className="text-xs font-bold tracking-widest uppercase text-gray-500">CLASSIFIED INTELLIGENCE</span>
             </div>
           </FadeIn>
 
@@ -237,21 +248,21 @@ export default function CyberCon() {
               <FadeIn delay={200}>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] text-neutral-900">
                   <span className="text-[#ff1e1e] inline-block mr-4 md:mr-6 text-3xl align-middle shadow-[0_0_15px_rgba(255,30,30,0.5)] rounded-full w-4 h-4" />
-                  CyberCon'26 - is an elite arena of cyber 
+                  CyberCon'26 - the nexus of digital 
                   <span className="inline-block w-16 h-8 sm:w-20 sm:h-10 md:w-24 md:h-12 bg-neutral-200 rounded-full mx-2 md:mx-3 align-middle overflow-hidden relative shadow-inner">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=200&auto=format&fit=crop')] bg-cover bg-center opacity-80 mix-blend-multiply grayscale" />
                   </span>
-                  warfare that combines <span className="text-neutral-400">the intensity of a Hackathon,</span>
+                  domination. Fusing <span className="text-neutral-400">systems engineering through rapid prototyping,</span>
                   <span className="inline-block w-16 h-8 sm:w-20 sm:h-10 md:w-24 md:h-12 bg-neutral-200 rounded-full mx-2 md:mx-3 align-middle overflow-hidden relative shadow-inner">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=200&auto=format&fit=crop')] bg-cover bg-center opacity-80 mix-blend-multiply grayscale" />
                   </span>
-                  <span className="text-neutral-400">Designathon, and Capture The Flag.</span>
+                  <span className="text-neutral-400">visual asymmetry, and exploitation methodologies.</span>
                 </h2>
               </FadeIn>
 
               <FadeIn delay={400}>
                 <p className="mt-12 md:mt-16 text-sm text-neutral-500 max-w-sm leading-relaxed border-l-2 border-[#ff1e1e] pl-6 font-medium">
-                  Built by many. Won by few. Pick your discipline and show up to the ultimate technology convergence in Sri Lanka.
+                  Engineered by the elite. Conquered by the relentless. Choose your specialization and execute at Sri Lanka's most intense cyber convergence.
                 </p>
               </FadeIn>
             </div>
@@ -307,7 +318,7 @@ export default function CyberCon() {
               </div>
 
               <div className="relative z-10">
-                <h4 className="text-gray-400 text-sm mb-2 uppercase tracking-wider font-bold">Total Registrations</h4>
+                <h4 className="text-gray-400 text-sm mb-2 uppercase tracking-wider font-bold">Operatives Deployed</h4>
                 <div className="text-4xl sm:text-6xl font-light tracking-tighter text-white">1000+</div>
               </div>
             </FadeIn>
@@ -333,7 +344,7 @@ export default function CyberCon() {
               </div>
 
               <div className="relative z-10">
-                <h4 className="text-gray-400 text-sm mb-2 uppercase tracking-wider font-bold">Challenge Tiers</h4>
+                <h4 className="text-gray-400 text-sm mb-2 uppercase tracking-wider font-bold">Threat Levels</h4>
                 <div className="text-3xl sm:text-5xl font-light tracking-tighter text-white">3 Levels</div>
               </div>
             </FadeIn>
@@ -342,13 +353,13 @@ export default function CyberCon() {
             <div className="flex flex-col gap-4 sm:gap-6 h-auto sm:h-[380px]">
               
               <FadeIn delay={600} className="bg-[#0a0a0a] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex-1 flex flex-col justify-center items-center text-center group hover:border-white/20 transition-colors relative overflow-hidden min-h-[140px]">
-                <h4 className="text-gray-400 text-xs mb-1 uppercase tracking-wider font-bold">Universities Linked</h4>
+                <h4 className="text-gray-400 text-xs mb-1 uppercase tracking-wider font-bold">Command Nodes Active</h4>
                 <div className="text-3xl sm:text-5xl font-light tracking-tighter text-white mb-2">25+</div>
-                <div className="text-[10px] text-[#ff1e1e] tracking-widest uppercase animate-pulse">Island-wide Grid</div>
+                <div className="text-[10px] text-[#ff1e1e] tracking-widest uppercase animate-pulse">Distributed Network</div>
               </FadeIn>
 
               <FadeIn delay={800} className="bg-[#0a0a0a] border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex-1 flex flex-col justify-center items-center text-center group hover:border-white/20 transition-colors relative overflow-hidden min-h-[140px]">
-                <h4 className="text-gray-400 text-xs mb-1 uppercase tracking-wider font-bold">Track Winners</h4>
+                <h4 className="text-gray-400 text-xs mb-1 uppercase tracking-wider font-bold">Mission Leaders</h4>
                 <div className="text-3xl sm:text-5xl font-light tracking-tighter text-white mb-2">09</div>
                 <div className="flex -space-x-2">
                   <div className="w-6 h-6 rounded-full bg-neutral-800 border-2 border-[#0a0a0a] flex items-center justify-center"><Trophy size={10} className="text-yellow-500" /></div>
@@ -378,18 +389,18 @@ export default function CyberCon() {
           <div className="flex-1 w-full py-12 lg:py-24">
             <FadeIn delay={400}>
               <div className="mb-12">
-                <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4">Operational Timeline</h2>
-                <p className="text-gray-400 text-sm sm:text-lg">Dates are locked. Prepare your vectors.</p>
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium tracking-tight mb-4">Mission Chronology</h2>
+                <p className="text-gray-400 text-sm sm:text-lg">Endpoints immutable. Sharpen your exploits.</p>
               </div>
             </FadeIn>
             
             <div className="relative border-l border-white/10 ml-3 space-y-12">
               {[
-                { date: "22 FEB 2026", title: "Registration Opens", desc: "The portal goes live. Secure your slot early." },
-                { date: "07 MAR 2026", title: "Designathon Workshop", desc: "Introductory session on UI/UX principles." },
-                { date: "14 MAR 2026", title: "Registration Closes", desc: "Final deadline. Access tokens will be revoked." },
-                { date: "21 MAR 2026", title: "Preliminary Rounds", desc: "Qualifiers begin. CTF starts on the 28th." },
-                { date: "04 APR 2026", title: "Grand Finale", desc: "Finalists converge on-site to execute operations." }
+                { date: "22 FEB 2026", title: "Agent Enrollment", desc: "Credentials activated. Infiltration slot allocation begins." },
+                { date: "07 MAR 2026", title: "UX Breach Workshop", desc: "Advanced methodology briefing—visual system exploitation." },
+                { date: "14 MAR 2026", title: "Enrollment Sealed", desc: "Final checkpoint. Unauthorized submissions purged." },
+                { date: "21 MAR 2026", title: "Qualifiers Ignited", desc: "Screening begins. Full-scale breach launches 28th." },
+                { date: "04 APR 2026", title: "Final Incursion", desc: "Elite operatives engage. On-site payload delivery commences." }
               ].map((item, i) => (
                 <FadeIn key={i} delay={600 + (i * 150)} className="relative pl-8 group">
                   <div className={`absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full ${i === 2 ? 'bg-[#ff1e1e] shadow-[0_0_10px_#ff1e1e]' : 'bg-neutral-700'} border border-black z-10`} />
@@ -409,18 +420,18 @@ export default function CyberCon() {
           
           <FadeIn>
             <div className="mb-16 md:text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight mb-4">Command & Intel</h2>
-              <p className="text-gray-500">Key personnel and classified queries.</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight mb-4">Command Structure</h2>
+              <p className="text-gray-500">Authorized contacts and classified protocols.</p>
             </div>
           </FadeIn>
 
           {/* Key Personnel Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
             {[
-              { name: "Raviru Rathnaweera", role: "President - ICTS" },
-              { name: "Nuwan Konara", role: "CTF Coord" },
-              { name: "Dulanga Perera", role: "Designathon Coord" },
-              { name: "Yesith Hansana", role: "Hackathon Coord" }
+              { name: "Raviru Rathnaweera", role: "Commanding Officer - ICTS" },
+              { name: "Nuwan Konara", role: "Exploitation Director" },
+              { name: "Dulanga Perera", role: "Payload Lead" },
+              { name: "Yesith Hansana", role: "Systems Architect" }
             ].map((person, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center space-x-4 hover:bg-white/10 hover:border-white/20 transition-all cursor-crosshair group">
@@ -439,10 +450,10 @@ export default function CyberCon() {
           {/* FAQs */}
           <FadeIn delay={400}>
             <div className="border border-white/10 rounded-3xl overflow-hidden bg-black/20">
-              <FAQAccordion question="Who is eligible to compete?" answer="University students across Sri Lanka. School categories have specific bounds depending on the track." />
-              <FAQAccordion question="Can I register for multiple tracks?" answer="Yes, but cross-track scheduling conflicts must be managed by the participant." />
-              <FAQAccordion question="What is the registration fee?" answer="Zero. Entry requires skill, not capital." />
-              <FAQAccordion question="Where is the final round?" answer="Faculty of Technology, University of Sri Jayewardenepura." />
+              <FAQAccordion question="Who qualifies for deployment?" answer="University operatives across Sri Lanka. Secondary agents welcome—clearance determined by track specialization." />
+              <FAQAccordion question="Can I pursue multiple vectors?" answer="Affirmative. Synchronize your timeline. Parallel execution monitored." />
+              <FAQAccordion question="What is the access fee?" answer="Null. Merit-based clearance only—no currency transactions." />
+              <FAQAccordion question="Where does final extraction occur?" answer="Faculty of Technology Headquarters, USJ Command Base." />
             </div>
           </FadeIn>
 
@@ -466,17 +477,17 @@ export default function CyberCon() {
               <span>CYBERCON'26</span>
             </div>
             <p className="text-sm text-gray-400 max-w-sm leading-relaxed">
-              Sri Lanka's only event where Builders, Designers, and Hackers compete on the same stage.
+              Sri Lanka's singular nexus where Architects, Engineers, and Operatives execute simultaneous strikes on one battlefield.
             </p>
           </FadeIn>
 
           {/* Right Side: Links */}
           <div className="flex-1 flex flex-row justify-start sm:justify-end gap-10 sm:gap-16 w-full sm:w-auto">
             <FadeIn delay={200} className="flex flex-col space-y-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Event</span>
-              <a href="#" className="text-sm text-white hover:text-[#ff1e1e] transition-colors bg-black/50 px-2 -mx-2 rounded">About Tracks</a>
-              <a href="#" className="text-sm text-white hover:text-[#ff1e1e] transition-colors bg-black/50 px-2 -mx-2 rounded">Timeline</a>
-              <a href="#" className="text-sm text-white hover:text-[#ff1e1e] transition-colors bg-black/50 px-2 -mx-2 rounded">Contact</a>
+              <span className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Mission</span>
+              <a href="#" className="text-sm text-white hover:text-[#ff1e1e] transition-colors bg-black/50 px-2 -mx-2 rounded">Vectors</a>
+              <a href="#" className="text-sm text-white hover:text-[#ff1e1e] transition-colors bg-black/50 px-2 -mx-2 rounded">Chronology</a>
+              <a href="#" className="text-sm text-white hover:text-[#ff1e1e] transition-colors bg-black/50 px-2 -mx-2 rounded">Dispatch</a>
             </FadeIn>
             <FadeIn delay={400} className="flex flex-col space-y-4">
               <span className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Social</span>
@@ -490,13 +501,13 @@ export default function CyberCon() {
 
         <FadeIn delay={600}>
           <div className="max-w-[1400px] mx-auto relative z-10 border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-medium bg-[#050505]/80 p-3 sm:p-4 rounded-xl gap-3">
-            <p className="text-white/70">© 2026 ICTS, Faculty of Technology, USJ. All rights reserved.</p>
+            <p className="text-white/70">© 2026 ICT Security Division, Faculty of Technology, USJ. Classified operations.</p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="text-gray-500 hover:text-white transition-colors">Protocol Enforcement</a>
+              <a href="#" className="text-gray-500 hover:text-white transition-colors">Operational Conduct</a>
               <div className="flex items-center space-x-2 border-l border-white/10 pl-6">
                 <CheckCircle2 size={14} className="text-green-500" />
-                <span className="text-white/70 uppercase tracking-widest text-[10px]">Systems Online</span>
+                <span className="text-white/70 uppercase tracking-widest text-[10px]">All Systems Go</span>
               </div>
             </div>
           </div>
