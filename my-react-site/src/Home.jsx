@@ -42,13 +42,29 @@ const FadeIn = ({ children, delay = 0, className = "" }) => {
 // --- STYLES & ANIMATIONS ---
 const FallingDataSparks = () => {
   const [isMobile, setIsMobile] = React.useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
   
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+    
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    
+    const handleMotionChange = (e) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addListener(handleMotionChange);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      mediaQuery.removeListener(handleMotionChange);
+    };
   }, []);
+  
+  // Don't render particles if user prefers reduced motion
+  if (prefersReducedMotion) {
+    return <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" />;
+  }
   
   const particleCount = isMobile ? 5 : 15;
   
@@ -98,16 +114,16 @@ const FAQAccordion = ({ question, answer }) => {
     <div className="border-b border-white/10 group bg-transparent hover:bg-white/5 transition-colors duration-500">
       <button 
         onClick={() => setIsOpen(!isOpen)} 
-        className="w-full py-6 flex items-center justify-between text-left focus:outline-none"
+        className="w-full py-4 sm:py-6 flex items-center justify-between text-left focus:outline-none active:scale-95 transition-transform"
       >
-        <span className="text-sm tracking-widest text-gray-400 group-hover:text-white transition-colors flex items-center font-medium">
-          <span className="text-[#ff1e1e] mr-6 font-bold text-lg">{isOpen ? '-' : '+'}</span>
+        <span className="text-xs sm:text-sm tracking-widest text-gray-400 group-hover:text-white transition-colors flex items-center font-medium">
+          <span className="text-[#ff1e1e] mr-3 sm:mr-6 font-bold text-base sm:text-lg">{isOpen ? '−' : '+'}</span>
           {question}
         </span>
-        <ChevronDown size={14} className={`text-gray-500 transition-transform duration-700 ${isOpen ? 'rotate-180 text-[#ff1e1e]' : ''}`} />
+        <ChevronDown size={16} className={`text-gray-500 transition-transform duration-700 flex-shrink-0 ${isOpen ? 'rotate-180 text-[#ff1e1e]' : ''}`} />
       </button>
-      <div className={`overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? 'max-h-48 opacity-100 pb-8' : 'max-h-0 opacity-0'}`}>
-        <p className="text-xs text-gray-500 leading-relaxed border-l-2 border-[#ff1e1e]/30 pl-6 ml-8">
+      <div className={`overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? 'max-h-64 opacity-100 pb-4 sm:pb-8' : 'max-h-0 opacity-0'}`}>
+        <p className="text-xs text-gray-500 leading-relaxed border-l-2 border-[#ff1e1e]/30 pl-4 sm:pl-6 ml-6 sm:ml-8">
           {answer || "Information is classified until preliminary rounds commence."}
         </p>
       </div>
@@ -145,10 +161,10 @@ export default function CyberCon() {
             <span>CYBERCON'26</span>
           </div>
           <div className="flex items-center space-x-3 sm:space-x-6">
-            <button className="bg-white text-black px-3 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+            <button className="bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] active:scale-95">
               Deploy Credentials
             </button>
-            <button className="text-white text-xs font-bold uppercase tracking-wider hover:text-[#ff1e1e] transition-colors">
+            <button className="text-white text-xs font-bold uppercase tracking-wider hover:text-[#ff1e1e] transition-colors py-2 px-2">
               Menu +
             </button>
           </div>
@@ -186,8 +202,8 @@ export default function CyberCon() {
           </div>
 
           {/* Center: The Cyber-Operative (Image) */}
-          <FadeIn delay={800} className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[570px] lg:w-[760px] pointer-events-none z-20 hidden md:flex flex-col items-center">
-            <img src={homeHackerImg} alt="Cyber Operative" className="w-full h-auto object-contain drop-shadow-[0_0_80px_rgba(255,30,30,0.15)]" />
+          <FadeIn delay={800} className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[570px] lg:w-[760px] pointer-events-none z-20 flex flex-col items-center">
+            <img loading="eager" src={homeHackerImg} alt="Cyber Operative" className="w-full h-auto object-contain drop-shadow-[0_0_80px_rgba(255,30,30,0.15)]" />
           </FadeIn>
 
           {/* Right Column: Info */}
@@ -270,7 +286,7 @@ export default function CyberCon() {
             {/* Right side: Laptop Image */}
             <FadeIn delay={600} className="flex-1 relative flex justify-center pt-8 md:pt-0">
               <div className="w-full max-w-[400px] md:max-w-[500px] drop-shadow-[0_0_30px_rgba(0,0,0,0.1)]">
-                <img src={laptopImg} alt="Cyber Laptop" className="w-full h-auto object-contain" />
+                <img loading="lazy" src={laptopImg} alt="Cyber Laptop" className="w-full h-auto object-contain" />
               </div>
             </FadeIn>
           </div>
@@ -381,7 +397,7 @@ export default function CyberCon() {
           {/* Left side: Hand Image */}
           <FadeIn delay={200} className="flex-1 relative flex justify-center items-end self-end pt-8 md:pt-0 -mb-2 md:-mb-6 lg:-mb-10">
             <div className="w-full max-w-[400px] md:max-w-[500px] drop-shadow-[0_0_50px_rgba(0,0,0,0.2)] flex justify-center items-end">
-              <img src={handImg} alt="Cyber Hand" className="w-full h-auto object-contain object-bottom block" />
+              <img loading="lazy" src={handImg} alt="Cyber Hand" className="w-full h-auto object-contain object-bottom block" />
             </div>
           </FadeIn>
 
@@ -465,7 +481,7 @@ export default function CyberCon() {
         
         {/* Massive Solid Face Graphic (Upper Layer) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] sm:max-w-[800px] h-[120%] pointer-events-none z-20 flex items-center justify-center opacity-30 sm:opacity-100">
-          <img src={faceImg} alt="Cyber Face" className="w-full h-full object-contain object-center drop-shadow-[0_0_30px_rgba(255,255,255,0.05)]" />
+          <img loading="lazy" src={faceImg} alt="Cyber Face" className="w-full h-full object-contain object-center drop-shadow-[0_0_30px_rgba(255,255,255,0.05)]" />
         </div>
 
         <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row justify-between items-start sm:items-center gap-8 sm:gap-12 mb-10 sm:mb-16">
