@@ -164,9 +164,6 @@ export default function CyberCon() {
             <button className="bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] active:scale-95">
               Deploy Credentials
             </button>
-            <button className="text-white text-xs font-bold uppercase tracking-wider hover:text-[#ff1e1e] transition-colors py-2 px-2">
-              Menu +
-            </button>
           </div>
         </nav>
 
@@ -192,18 +189,19 @@ export default function CyberCon() {
                 <div className="text-[#ff1e1e] drop-shadow-2xl relative z-0">NA</div>
               </h1>
             </FadeIn>
-
-            <FadeIn delay={600}>
-              <div className="mt-6 sm:mt-10 flex items-center space-x-4">
-                <div className="w-2 h-2 rounded-full bg-[#ff1e1e] shadow-[0_0_10px_#ff1e1e]" />
-                <span className="text-xs sm:text-sm text-gray-400 font-medium tracking-widest uppercase">Classified Ops | Hosted By ICT Club Of Saegis Campus</span>
-              </div>
-            </FadeIn>
           </div>
 
           {/* Center: The Cyber-Operative (Image) */}
           <FadeIn delay={800} className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[570px] lg:w-[760px] pointer-events-none z-20 flex flex-col items-center">
             <img loading="eager" src={homeHackerImg} alt="Cyber Operative" className="w-full h-auto object-contain drop-shadow-[0_0_80px_rgba(255,30,30,0.15)]" />
+          </FadeIn>
+
+          {/* Classified Ops Text - Positioned at Bottom */}
+          <FadeIn delay={600} className="absolute bottom-0 left-4 sm:left-8 z-30 w-full max-w-[calc(100%-32px)] pb-4 sm:pb-8">
+            <div className="flex items-center space-x-4">
+              <div className="w-2 h-2 rounded-full bg-[#ff1e1e] shadow-[0_0_10px_#ff1e1e] flex-shrink-0" />
+              <span className="text-xs sm:text-sm text-gray-400 font-medium tracking-widest uppercase">Classified Ops | Hosted By ICT Club Of Saegis Campus</span>
+            </div>
           </FadeIn>
 
           {/* Right Column: Info */}
@@ -392,7 +390,7 @@ export default function CyberCon() {
 
       {/* ================= OPERATIONAL TIMELINE SECTION ================= */}
       <section className="relative w-full bg-[#030303] text-white pt-10 sm:pt-16 pb-0 px-4 sm:px-8 border-t border-white/5 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-end gap-8 sm:gap-12 md:gap-20">
+        <div className="max-w-[1400px] mx-auto flex flex-col-reverse lg:flex-row items-end gap-8 sm:gap-12 md:gap-20">
           
           {/* Left side: Hand Image */}
           <FadeIn delay={200} className="flex-1 relative flex justify-center items-end self-end pt-8 md:pt-0 -mb-2 md:-mb-6 lg:-mb-10">
