@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Sparkles, Hexagon, Code, PenTool, Flag, Trophy, ChevronDown, User, Activity, CheckCircle2 } from 'lucide-react';
-import homeHackerImg from './assets/home-hacker.png';
-import laptopImg from './assets/laptop.png';
-import handImg from './assets/hand.png';
-import faceImg from './assets/face.png';
+import homeHackerImg from './assets/home-hacker.webp';
+import laptopImg from './assets/laptop.webp';
+import handImg from './assets/hand.webp';
+import faceImg from './assets/face.webp';
 
 // --- ANIMATION COMPONENTS ---
 const FadeIn = ({ children, delay = 0, className = "" }) => {
@@ -193,7 +193,7 @@ export default function CyberCon() {
 
           {/* Center: The Cyber-Operative (Image) */}
           <FadeIn delay={800} className="absolute top-[5%] left-1/2 -translate-x-1/2 w-[570px] lg:w-[760px] pointer-events-none z-20 flex flex-col items-center">
-            <img loading="eager" src={homeHackerImg} alt="Cyber Operative" className="w-full h-auto object-contain drop-shadow-[0_0_80px_rgba(255,30,30,0.15)]" />
+            <img loading="eager" decoding="async" src={homeHackerImg} alt="Cyber Operative" className="w-full h-auto object-contain drop-shadow-[0_0_80px_rgba(255,30,30,0.15)]" />
           </FadeIn>
 
           {/* Classified Ops Text - Positioned at Bottom */}
@@ -284,7 +284,7 @@ export default function CyberCon() {
             {/* Right side: Laptop Image */}
             <FadeIn delay={600} className="flex-1 relative flex justify-center pt-8 md:pt-0">
               <div className="w-full max-w-[400px] md:max-w-[500px] drop-shadow-[0_0_30px_rgba(0,0,0,0.1)]">
-                <img loading="lazy" src={laptopImg} alt="Cyber Laptop" className="w-full h-auto object-contain" />
+                <img loading="lazy" decoding="async" src={laptopImg} alt="Cyber Laptop" className="w-full h-auto object-contain" />
               </div>
             </FadeIn>
           </div>
@@ -395,7 +395,7 @@ export default function CyberCon() {
           {/* Left side: Hand Image */}
           <FadeIn delay={200} className="flex-1 relative flex justify-center items-end self-end pt-8 md:pt-0 -mb-2 md:-mb-6 lg:-mb-10">
             <div className="w-full max-w-[400px] md:max-w-[500px] drop-shadow-[0_0_50px_rgba(0,0,0,0.2)] flex justify-center items-end">
-              <img loading="lazy" src={handImg} alt="Cyber Hand" className="w-full h-auto object-contain object-bottom block" />
+              <img loading="lazy" decoding="async" src={handImg} alt="Cyber Hand" className="w-full h-auto object-contain object-bottom block" />
             </div>
           </FadeIn>
 
@@ -479,7 +479,7 @@ export default function CyberCon() {
         
         {/* Massive Solid Face Graphic (Upper Layer) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] sm:max-w-[800px] h-[120%] pointer-events-none z-20 flex items-center justify-center opacity-30 sm:opacity-100">
-          <img loading="lazy" src={faceImg} alt="Cyber Face" className="w-full h-full object-contain object-center drop-shadow-[0_0_30px_rgba(255,255,255,0.05)]" />
+          <img loading="lazy" decoding="async" src={faceImg} alt="Cyber Face" className="w-full h-full object-contain object-center drop-shadow-[0_0_30px_rgba(255,255,255,0.05)]" />
         </div>
 
         <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row justify-between items-start sm:items-center gap-8 sm:gap-12 mb-10 sm:mb-16">
